@@ -1,14 +1,22 @@
 public class Punto {
     private double coordenada_x;
     private double coordenada_y;
+    //con parametros
     public Punto(double coordenada_x, double coordenada_y){
         this.coordenada_x=coordenada_x;
         this.coordenada_y=coordenada_y;
     }
+    //sin parametros
     public Punto(){
         coordenada_y=10;
         coordenada_x=5;
     }
+
+    @Override
+    public String toString() {
+        return "El punto tiene las siguientes coordenadas: " + coordenada_x + "," + coordenada_y;
+    }
+
     public double getCoordenada_x() {
         return coordenada_x;
     }

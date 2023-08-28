@@ -1,3 +1,5 @@
+import static java.lang.Math.round;
+
 public class Triangulo extends FiguraGeometrica {
     private Punto punto1;
     private Punto punto2;
@@ -5,9 +7,9 @@ public class Triangulo extends FiguraGeometrica {
 
     public Triangulo() {
         super("Triángulo");
-        punto1 = new Punto(0.0, 0.0);
-        punto2 = new Punto(1.0, 0.0);
-        punto3 = new Punto(0.0, 1.0);
+        punto1 = new Punto(5.0, 6.0);
+        punto2 = new Punto(6.0, 5.0);
+        punto3 = new Punto(4.0, 7.0);
     }
 
     public Triangulo(String nombre, Punto punto1, Punto punto2, Punto punto3) {
@@ -52,8 +54,15 @@ public class Triangulo extends FiguraGeometrica {
 
     @Override
     public boolean esRegular() {
-
-        return false;
+        double a = round(punto1.calcularDistancia(punto2));
+        double b = round(punto2.calcularDistancia(punto3));
+        double c = round(punto3.calcularDistancia(punto1));
+        if(a == b  && b == c){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
     @Override
